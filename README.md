@@ -1,6 +1,4 @@
-# CapistranoNotifier
-
-TODO: Write a gem description
+# Capistrano3 Email Notifier
 
 ## Installation
 
@@ -12,13 +10,21 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install capistrano_notifier
-
 ## Usage
 
-TODO: Write usage instructions here
+In your ```deploy/config.rb```:
+
+```ruby
+set :notifier_mail_options, { to: "notify@example.com",
+                              from: "deploy@example.com",
+                              delivery_method: :smtp}
+```
+
+In your ```Capfile```:
+
+```ruby
+require 'capistrano/notifier'
+```
 
 ## Contributing
 
