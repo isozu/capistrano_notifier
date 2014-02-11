@@ -18,6 +18,8 @@ In your ```deploy/config.rb```:
 set :notifier_mail_options, { to: "notify@example.com",
                               from: "deploy@example.com",
                               delivery_method: :smtp}
+                              
+after 'deploy:finishing','deploy:notify'                              
 ```
 
 In your ```Capfile```:
